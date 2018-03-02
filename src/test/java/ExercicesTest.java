@@ -81,12 +81,13 @@ public class ExercicesTest {
     @Test
     public void compter_le_nombre_de_pates() throws Exception {
         //given
-        Animal chat1 = new Animal(4);
-        Animal chat2 = new Animal(4);
-        Animal chat3 = new Animal(4);
-        Animal chatEmpute = new Animal(3);
-        Animal poule1 = new Animal(2);
-        Animal poule2 = new Animal(2);
+        Animal chat1 = new Chat();
+        Animal chat2 = new Chat();
+        Animal chat3 = new Chat();
+        Animal chatEmpute = new Chat();
+        chatEmpute.perdUnePate();
+        Animal poule1 = new Poule();
+        Animal poule2 = new Poule();
 
         List<Animal> animaux = Arrays.asList(chat1,chat2,chat3,chatEmpute,poule1,poule2);
         int nombresDepates = 19;
@@ -97,5 +98,12 @@ public class ExercicesTest {
         //then
         assertThat(nombresDePatesCalculees).isEqualTo(nombresDepates);
 
+    }
+
+    @Test
+    public void toto() throws Exception {
+        //given
+        //when       
+        //then
     }
 }

@@ -8,4 +8,8 @@ class Animal {
     public int getNombreDePates() {
         return nombreDePates;
     }
+
+    void perdUnePate(){
+        this.nombreDePates--;
+    }
 }
