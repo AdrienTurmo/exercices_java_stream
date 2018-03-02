@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -75,5 +76,26 @@ public class ExercicesTest {
 
         //then
         assertThat(listeResultat).isEqualTo(expectedList);
+    }
+
+    @Test
+    public void compter_le_nombre_de_pates() throws Exception {
+        //given
+        Animal chat1 = new Animal(4);
+        Animal chat2 = new Animal(4);
+        Animal chat3 = new Animal(4);
+        Animal chatEmpute = new Animal(3);
+        Animal poule1 = new Animal(2);
+        Animal poule2 = new Animal(2);
+
+        List<Animal> animaux = Arrays.asList(chat1,chat2,chat3,chatEmpute,poule1,poule2);
+        int nombresDepates = 19;
+
+        //when
+        int nombresDePatesCalculees = Exercices.exercice6(animaux);
+
+        //then
+        assertThat(nombresDePatesCalculees).isEqualTo(nombresDepates);
+
     }
 }
