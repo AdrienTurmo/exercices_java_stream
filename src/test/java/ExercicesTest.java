@@ -1,5 +1,6 @@
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -56,5 +57,23 @@ public class ExercicesTest {
 
         //then
         assertThat(listeResultat).containsExactlyInAnyOrder(listeDesMotsCommancantPar_a.toArray(new String[0]));
+    }
+
+    @Test
+    public void liste_tout_les_7_chiffres_entre_52_et_107() throws Exception {
+        //given
+        List<Integer> expectedList = new ArrayList<>();
+        int debut = 52;
+        int fin = 107;
+        int ecart = 7;
+        for (int i = debut; i <= fin; i += ecart) {
+            expectedList.add(i);
+        }
+
+        //when
+        List<Integer> listeResultat = Exercices.exercice5(debut, fin, ecart);
+
+        //then
+        assertThat(listeResultat).isEqualTo(expectedList);
     }
 }
