@@ -1,9 +1,6 @@
-import org.junit.Ignore;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -81,15 +78,15 @@ public class ExercicesTest {
     @Test
     public void compter_le_nombre_de_pates() throws Exception {
         //given
-        Animal chat1 = new Chat();
-        Animal chat2 = new Chat();
-        Animal chat3 = new Chat();
-        Animal chatEmpute = new Chat();
+        Animal chat1 = new Chat(Couleur.gris);
+        Animal chat2 = new Chat(Couleur.gris);
+        Animal chat3 = new Chat(Couleur.gris);
+        Animal chatEmpute = new Chat(Couleur.gris);
         chatEmpute.perdUnePate();
         Animal poule1 = new Poule();
         Animal poule2 = new Poule();
 
-        List<Animal> animaux = Arrays.asList(chat1,chat2,chat3,chatEmpute,poule1,poule2);
+        List<Animal> animaux = Arrays.asList(chat1, chat2, chat3, chatEmpute, poule1, poule2);
         int nombresDepates = 19;
 
         //when
@@ -101,9 +98,28 @@ public class ExercicesTest {
     }
 
     @Test
-    public void toto() throws Exception {
+    public void calculer_la_quantite_de_chat_de_chaque_couleur() throws Exception {
         //given
-        //when       
+        List<Chat> chats = Arrays.asList(
+                new Chat(Couleur.gris),
+                new Chat(Couleur.gris),
+                new Chat(Couleur.gris),
+                new Chat(Couleur.noir),
+                new Chat(Couleur.noir),
+                new Chat(Couleur.roux)
+        );
+
+        Map<Couleur, Integer> comptageDesCouleursDeChar = new HashMap<>();
+        comptageDesCouleursDeChar.put(Couleur.blanc, 0);
+        comptageDesCouleursDeChar.put(Couleur.noir, 2);
+        comptageDesCouleursDeChar.put(Couleur.gris, 3);
+        comptageDesCouleursDeChar.put(Couleur.roux, 1);
+
+        //when
+        Map<Couleur, Integer> result = Exercices.exercice7(chats);
+
         //then
+
+        assertThat(result).isEqualTo(comptageDesCouleursDeChar);
     }
 }

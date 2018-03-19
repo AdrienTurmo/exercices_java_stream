@@ -1,6 +1,7 @@
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
+import java.util.Map;
 
 class Exercices {
     static String exercice1(List<String> inputString) {
@@ -24,6 +25,10 @@ class Exercices {
     }
 
     public static int exercice6(List<Animal> animaux) {
+        throw new NotImplementedException();
+    }
+
+    public static Map<Couleur, Integer> exercice7(List<Chat> chat) {
         throw new NotImplementedException();
     }
 }
